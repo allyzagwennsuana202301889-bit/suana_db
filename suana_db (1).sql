@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2025 at 11:21 PM
+-- Generation Time: Dec 02, 2025 at 09:06 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,13 +32,6 @@ CREATE TABLE `category` (
   `category_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(23, 'Friday Night Funkin');
-
 -- --------------------------------------------------------
 
 --
@@ -51,13 +44,6 @@ CREATE TABLE `customers` (
   `phone_num` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `customers`
---
-
-INSERT INTO `customers` (`customer_id`, `Cname`, `phone_num`, `email`) VALUES
-(27, 'Liam', '09234123234', 'syr@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -74,14 +60,6 @@ CREATE TABLE `orders` (
   `customer_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`orders_id`, `address`, `payment_method`, `status`, `orders_date`, `customer_id`) VALUES
-(33, 'nonyastreet', 'gcash', 'Pending', '2025-11-26', 27),
-(34, 'nonyastreet', 'gcash', 'Pending', '2025-11-26', 27);
-
 -- --------------------------------------------------------
 
 --
@@ -97,14 +75,6 @@ CREATE TABLE `order_item` (
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `order_item`
---
-
-INSERT INTO `order_item` (`item_id`, `Iname`, `Iquantity`, `Iprice`, `orders_id`, `product_id`) VALUES
-(13, '', 2, 100, 33, 25),
-(14, '', 1, 100, 34, 26);
-
 -- --------------------------------------------------------
 
 --
@@ -118,14 +88,6 @@ CREATE TABLE `products` (
   `price` double NOT NULL,
   `category_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`product_id`, `name`, `quantity`, `price`, `category_id`) VALUES
-(25, 'Zavodilla(Sarv)', 0, 100, 23),
-(26, 'Clown Mod', 0, 100, 23);
 
 --
 -- Indexes for dumped tables
@@ -173,31 +135,31 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `orders_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `order_item`
 --
 ALTER TABLE `order_item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
